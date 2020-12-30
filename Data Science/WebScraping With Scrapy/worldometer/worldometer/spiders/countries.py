@@ -11,9 +11,9 @@ class CountriesSpider(scrapy.Spider):
 
         for country in countries:
             name = country.xpath(".//text()").get()
-            link = country.xpath(".//@href()").get()
+            link = country.xpath(".//@href").get()
 
-        yield {
-            'country_name': name,
-            'country_link': link
-        }
+            yield {
+                'country_name': name,
+                'country_link': link
+            }
