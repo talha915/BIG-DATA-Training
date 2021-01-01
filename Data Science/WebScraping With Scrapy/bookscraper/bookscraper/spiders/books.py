@@ -18,7 +18,8 @@ class BooksSpider(scrapy.Spider):
             product_title = data.xpath(".//h3/a/@title").get()
             product_price = data.xpath(".//div[@class='product_price']/p[@class='price_color']/text()").get()
             product_stock = data.xpath(".//div[@class='product_price']/p[2]/@class").get()
-            yield {
+            yield response.follow(url=url_link, callback=self.parseProductDetail, 
+            meta={
                 'page_title': page_title,
                 'product_title': product_title,
                 'product_image_path': image_src,
@@ -27,4 +28,25 @@ class BooksSpider(scrapy.Spider):
                 'product_rating': ratings,
                 'product_price': product_price,
                 'stock_availability': product_stock
-            }
+            }) 
+
+    def parseProductDetail(self, response):
+        page_title = response.request.meta['page_title']
+        product_title = response.request.meta['product_title']
+        product_image_path = response.request.meta['product_image_path']
+        product_image_attribute = response.request.meta['product_image_attribute']
+        product_link = response.request.meta['product_link']
+        product_rating = response.request.meta['product_rating']
+        product_price = response.request.meta['product_price']
+        stock_availability = response.request.meta['stock_availability']
+
+        yield {
+            'page_title': page_title,
+            'product_title': product_title,
+            'product_image_path': product_image_path,
+            'product_image_attribute': product_image_attribute,
+            'product_link': product_link,
+            'product_rating': product_rating,
+            'product_price': product_price,
+            'stock_availability': stock_availability
+        }        
