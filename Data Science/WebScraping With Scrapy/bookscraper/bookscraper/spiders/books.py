@@ -40,6 +40,8 @@ class BooksSpider(scrapy.Spider):
         product_price = response.request.meta['product_price']
         stock_availability = response.request.meta['stock_availability']
 
+        description = response.xpath("//article/p/text()").get()
+
         yield {
             'page_title': page_title,
             'product_title': product_title,
@@ -48,5 +50,6 @@ class BooksSpider(scrapy.Spider):
             'product_link': product_link,
             'product_rating': product_rating,
             'product_price': product_price,
-            'stock_availability': stock_availability
+            'stock_availability': stock_availability,
+            'product_description': description
         }        
