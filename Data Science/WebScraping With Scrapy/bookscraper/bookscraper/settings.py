@@ -1,4 +1,4 @@
-# Scrapy settings for servicedeal project
+# Scrapy settings for bookscraper project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'servicedeal'
+BOT_NAME = 'bookscraper'
 
-SPIDER_MODULES = ['servicedeal.spiders']
-NEWSPIDER_MODULE = 'servicedeal.spiders'
+SPIDER_MODULES = ['bookscraper.spiders']
+NEWSPIDER_MODULE = 'bookscraper.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'servicedeal (+http://www.yourdomain.com)'
+#USER_AGENT = 'bookscraper (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'servicedeal.middlewares.ServicedealSpiderMiddleware': 543,
+#    'bookscraper.middlewares.BookscraperSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'servicedeal.middlewares.ServicedealDownloaderMiddleware': 543,
+#    'bookscraper.middlewares.BookscraperDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'servicedeal.pipelines.ServicedealPipeline': 300,
+#    'bookscraper.pipelines.BookscraperPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
