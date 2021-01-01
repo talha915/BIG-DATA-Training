@@ -47,6 +47,7 @@ class BooksSpider(scrapy.Spider):
         product_price_inclusive = response.xpath("(//table[@class='table table-striped'])[1]/tr[4]/td/text()").get()
         product_tax = response.xpath("(//table[@class='table table-striped'])[1]/tr[5]/td/text()").get()
         stock_availability = response.xpath("(//table[@class='table table-striped'])[1]/tr[6]/td/text()").get()
+        reviews = response.xpath("(//table[@class='table table-striped'])[1]/tr[7]/td/text()").get()
         yield {
             'page_title': page_title,
             'product_title': product_title,
@@ -61,5 +62,6 @@ class BooksSpider(scrapy.Spider):
             'product_price_exclusive_tax': product_price_exclusive,
             'product_price_inclusive_tax': product_price_inclusive,
             'tax_on_product': product_tax,
-            'product_availability': stock_availability
+            'product_availability': stock_availability,
+            'product_review': reviews
         }        
