@@ -7,4 +7,8 @@ class BooksSpider(scrapy.Spider):
     start_urls = ['http://books.toscrape.com/catalogue/page-1.html']
 
     def parse(self, response):
-        pass
+        page_title = response.xpath("//div[@class='page-header action']/h1/text()").get()
+
+        yield {
+            'title': page_title
+        }
