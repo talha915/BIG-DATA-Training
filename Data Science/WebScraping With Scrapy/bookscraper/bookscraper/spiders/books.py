@@ -5,7 +5,7 @@ class BooksSpider(scrapy.Spider):
     name = 'books'
     allowed_domains = ['books.toscrape.com']
     start_urls = ['http://books.toscrape.com/catalogue/page-1.html']
-
+    base_url = 'http://books.toscrape.com/catalogue/'
     def parse(self, response):
         page_title = response.xpath("//div[@class='page-header action']/h1/text()").get()
         lists = response.xpath("//ol[@class='row']/li/article")
@@ -28,7 +28,13 @@ class BooksSpider(scrapy.Spider):
                 'product_rating': ratings,
                 'product_price': product_price,
                 'stock_availability': product_stock
-            }) 
+            })
+        # For Pagination   
+        next_page_partial_url = response.xpath("//ul[@class='pager']/li[@class='next']/a/@href").get()
+        next_page_url = self.base_url + next_page_partial_url
+
+        yield scrapy.Request(next_page_url, callback=self.parse)
+        
 
     def parseProductDetail(self, response):
         page_title = response.request.meta['page_title']
