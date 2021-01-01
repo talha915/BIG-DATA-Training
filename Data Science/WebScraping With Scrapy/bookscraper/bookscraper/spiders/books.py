@@ -8,7 +8,11 @@ class BooksSpider(scrapy.Spider):
 
     def parse(self, response):
         page_title = response.xpath("//div[@class='page-header action']/h1/text()").get()
-
-        yield {
-            'title': page_title
-        }
+        lists = response.xpath("//ol[@class='row']/li/article")
+        for data in lists:
+            tags = data.xpath(".//div/a")
+            image_src = tags.css('img').attrib['src']
+            yield {
+                'title': page_title,
+                'image_src': image_src
+            }
