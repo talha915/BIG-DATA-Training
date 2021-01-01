@@ -15,8 +15,10 @@ class BooksSpider(scrapy.Spider):
             image_alt = tags.css('img').attrib['alt']
             url_link = tags.xpath(".//@href").get()
             ratings = data.xpath(".//p/@class").get()
+            product_title = data.xpath(".//h3/a/@title").get()
             yield {
-                'product_title': page_title,
+                'page_title': page_title,
+                'product_title': product_title,
                 'product_image_path': image_src,
                 'product_image_attribute': image_alt,
                 'product_link': url_link,
