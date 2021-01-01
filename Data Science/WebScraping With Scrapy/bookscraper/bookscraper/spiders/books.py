@@ -17,6 +17,7 @@ class BooksSpider(scrapy.Spider):
             ratings = data.xpath(".//p/@class").get()
             product_title = data.xpath(".//h3/a/@title").get()
             product_price = data.xpath(".//div[@class='product_price']/p[@class='price_color']/text()").get()
+            product_stock = data.xpath(".//div[@class='product_price']/p[2]/@class").get()
             yield {
                 'page_title': page_title,
                 'product_title': product_title,
@@ -24,5 +25,6 @@ class BooksSpider(scrapy.Spider):
                 'product_image_attribute': image_alt,
                 'product_link': url_link,
                 'product_rating': ratings,
-                'product_price': product_price
+                'product_price': product_price,
+                'stock_availability': product_stock
             }
