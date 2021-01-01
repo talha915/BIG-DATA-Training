@@ -12,7 +12,9 @@ class BooksSpider(scrapy.Spider):
         for data in lists:
             tags = data.xpath(".//div/a")
             image_src = tags.css('img').attrib['src']
+            image_alt = tags.css('img').attrib['alt']
             yield {
                 'title': page_title,
-                'image_src': image_src
+                'image_path': image_src,
+                'image_attribute': image_alt
             }
