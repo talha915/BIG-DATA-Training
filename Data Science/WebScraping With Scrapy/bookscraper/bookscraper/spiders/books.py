@@ -6,6 +6,7 @@ class BooksSpider(scrapy.Spider):
     allowed_domains = ['books.toscrape.com']
     start_urls = ['http://books.toscrape.com/catalogue/page-1.html']
     base_url = 'http://books.toscrape.com/catalogue/'
+    
     def parse(self, response):
         page_title = response.xpath("//div[@class='page-header action']/h1/text()").get()
         lists = response.xpath("//ol[@class='row']/li/article")
