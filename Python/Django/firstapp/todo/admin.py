@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . import Todo
+from .models import Todo
 
 class TodoAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
