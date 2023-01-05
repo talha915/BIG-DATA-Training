@@ -52,4 +52,12 @@ async def run():
         print("Couldn't send to azure event hub: ", e)
 
 
-loop = asyncio.get
+loop = asyncio.get_event_loop()
+try:
+    loop.ensure_future(run())
+    loop.run_forever()
+except Exception as e:
+    pass
+finally:
+    print("Closing Loop Now")
+    loop.close()    
