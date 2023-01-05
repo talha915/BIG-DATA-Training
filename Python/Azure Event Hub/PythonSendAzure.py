@@ -6,8 +6,8 @@ from azure.eventhub import EventData
 import asyncio
 import datetime
 
-connection_str = ""
-eventhub_name = ""
+connection_str = "Endpoint=sb://firsttimeeventhub.servicebus.windows.net/;SharedAccessKeyName=first_time_stream_analytics_job_policy;SharedAccessKey=T17W2TJV+i359a7DlRqIymI3frCHXOnaylHAE9VxvDM=;EntityPath=python_feed_data_first_event_hub"
+eventhub_name = "python_feed_data_first_event_hub"
 
 # test = si.get_quote_data('msft')
 # test_df = pd.DataFrame([test], columns=test.keys())[['regularMarketTime', 'regularMarketPrice', 'marketCap', 'exchange', 'averageAnalystRating']]
@@ -54,10 +54,10 @@ async def run():
 
 loop = asyncio.get_event_loop()
 try:
-    loop.ensure_future(run())
+    asyncio.ensure_future(run())
     loop.run_forever()
 except Exception as e:
-    pass
+    print(e)
 finally:
     print("Closing Loop Now")
     loop.close()    
