@@ -16,14 +16,15 @@ eventhub_name = "python_feed_data_first_event_hub"
 # test_df['regularMarketTime'] = datetime.datetime.fromtimestamp(test_df['regularMarketTime'])
 
 
-def get_data_for_stock(data):
+def get_data_for_stock(res):
+    data = si.get_quote_data(res)
     df = pd.DataFrame([data], columns=data.keys())[['regularMarketTime', 'regularMarketPrice', 'marketCap', 'exchange', 'averageAnalystRating']]
     df['marketCap'] = df.apply(lambda row: "$"+str(round(row['marketCap'] / 1000000000000, 2))+"MM", axis=1)
     # df['averageAnalystRating'] = df['averageAnalystRating'].str.split('-', 1, expand=True)
     df[['analystRating', 'analystBuySell']] = df['averageAnalystRating'].str.split('-', 1, expand=True)
     df.drop('averageAnalystRating', axis=1, inplace=True)
-    df['regularMarketTime'] = datetime.datetime.fromtimestamp(df['regularMarketTime'])
-    return df.to_dict('record')
+    df['regularMarketTime'] = str(datetime.datetime.fromtimestamp(df['regularMarketTime']))
+    return df.to_dict('records')
 
 
 # result = get_data_for_stock(si.get_quote_data('msft'))
