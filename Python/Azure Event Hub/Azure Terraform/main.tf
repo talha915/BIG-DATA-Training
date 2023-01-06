@@ -34,3 +34,23 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
     hello = "aGVsbG8="
   }
 }
+
+resource "azurerm_eventhub_namespace" "examplenamespace" {
+  name                = "TestingEventHubNamespace"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  sku                 = "Basic"
+  capacity            = 1
+
+  tags = {
+    environment = "Production"
+  }
+}
+
+resource "azurerm_eventhub" "examplehub" {
+  name                = "TestingEventHub"
+  namespace_name      = azurerm_eventhub_namespace.examplenamespace.name
+  resource_group_name = azurerm_resource_group.examplenamespace.name
+  partition_count     = 2
+  message_retention   = 1
+}
