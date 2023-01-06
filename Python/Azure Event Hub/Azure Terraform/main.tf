@@ -57,7 +57,7 @@ resource "azurerm_eventhub" "examplehub" {
 
 
 resource "azurerm_stream_analytics_job" "example_stream_analytics_job" {
-  name                                     = "example-job"
+  name                                     = "testing-first-stream-job"
   resource_group_name                      = azurerm_resource_group.example.name
   location                                 = azurerm_resource_group.example.location
   compatibility_level                      = "1.2"
