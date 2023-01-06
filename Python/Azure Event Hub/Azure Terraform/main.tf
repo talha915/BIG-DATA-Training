@@ -36,7 +36,7 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
 }
 
 resource "azurerm_eventhub_namespace" "examplenamespace" {
-  name                = "TestingEventHubNamespace"
+  name                = "TestingTalhaEventHubNamespace"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
   sku                 = "Basic"
@@ -48,7 +48,7 @@ resource "azurerm_eventhub_namespace" "examplenamespace" {
 }
 
 resource "azurerm_eventhub" "examplehub" {
-  name                = "TestingEventHub"
+  name                = "TestingTalhaEventHub"
   namespace_name      = azurerm_eventhub_namespace.examplenamespace.name
   resource_group_name = azurerm_resource_group.example.name
   partition_count     = 2

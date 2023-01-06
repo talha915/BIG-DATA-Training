@@ -6,7 +6,7 @@ from azure.eventhub import EventData
 import asyncio
 import datetime
 
-connection_str = "Endpoint=sb://testingtalhaeventhubnamespace.servicebus.windows.net/;SharedAccessKeyName=rootlevel;SharedAccessKey=QebygvYCSvobuigP/MSixhOGeFSu19iH5ano4z+27Qg=;EntityPath=testingtalhaeventhub"
+connection_str = "Endpoint=sb://testingtalhaeventhubnamespace.servicebus.windows.net/;SharedAccessKeyName=listen;SharedAccessKey=3IkTN25FWSAeOrMnVCiuKG2sOlniVSoIhGNyRW1C/tc=;EntityPath=testingtalhaeventhub"
 eventhub_name = "testingtalhaeventhub"
 
 # test = si.get_quote_data('msft')
