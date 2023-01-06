@@ -50,7 +50,7 @@ resource "azurerm_eventhub_namespace" "examplenamespace" {
 resource "azurerm_eventhub" "examplehub" {
   name                = "TestingEventHub"
   namespace_name      = azurerm_eventhub_namespace.examplenamespace.name
-  resource_group_name = azurerm_resource_group.examplenamespace.name
+  resource_group_name = azurerm_resource_group.example.name
   partition_count     = 2
   message_retention   = 1
 }
