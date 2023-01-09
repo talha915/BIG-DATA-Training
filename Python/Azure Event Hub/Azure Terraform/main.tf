@@ -1,15 +1,16 @@
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "=3.0.0"
-    }
+  backend "azurerm" {
+    storage_account_name = "tfstatedevsa"
+    container_name       = "state"
+    key                  = "backend/remotestate.tfstate"
   }
 }
+
 
 provider "azurerm" {
   features { }
 }
+
 
 resource "azurerm_resource_group" "example" {
   name     = "testing_first_time_group"
