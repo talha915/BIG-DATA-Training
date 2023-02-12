@@ -18,6 +18,18 @@
         "containerName": {
             "type": "string"
         },
+        "eventHubNamespaceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the Event Hub namespace to create."
+            }
+        },
+        "eventHubName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the Event Hub to create."
+            }
+        },
         "skuName": {
             "type": "string",
             "defaultValue": "Standard_LRS",
@@ -63,6 +75,28 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
             ],
             "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces",
+            "name": "[parameters('eventHubNamespaceName')]",
+            "apiVersion": "2017-04-01",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard"
+            },
+            "kind": "EventHub",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "name": "[concat(parameters('eventHubNamespaceName'), '/', parameters('eventHubName'))]",
+            "apiVersion": "2017-04-01",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', parameters('eventHubNamespaceName'))]"
+            ],
+            "properties": {
+                "messageRetentionInDays": 7
+            }
         }
     ]
 }

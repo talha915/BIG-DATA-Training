@@ -16,6 +16,12 @@
         },
         "containerName": {
             "value": "mycontainer"
+        },
+        "eventHubNamespaceName": {
+            "value": "mainnamespace"
+        },
+        "eventHubName": {
+            "value": "hereneweventhubname" 
         }
     }
 }
