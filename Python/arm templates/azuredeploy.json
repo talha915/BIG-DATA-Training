@@ -1,0 +1,56 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "westus",
+            "metadata": {
+                "description": "Location for the storage account."
+            }
+        },
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the storage account."
+            }
+        },
+        "skuName": {
+            "type": "string",
+            "defaultValue": "Standard_LRS",
+            "allowedValues": [
+                "Standard_LRS",
+                "Standard_GRS",
+                "Standard_RAGRS",
+                "Standard_ZRS"
+            ],
+            "metadata": {
+                "description": "SKU of the storage account."
+            }
+        },
+        "kind": {
+            "type": "string",
+            "defaultValue": "StorageV2",
+            "allowedValues": [
+                "Storage",
+                "StorageV2"
+            ],
+            "metadata": {
+                "description": "Kind of the storage account."
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-04-01",
+            "name": "[parameters('storageAccountName')]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "[parameters('skuName')]"
+            },
+            "kind": "[parameters('kind')]",
+            "properties": {}
+        }
+    ]
+}
