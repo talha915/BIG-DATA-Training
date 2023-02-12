@@ -4,7 +4,7 @@
     "parameters": {
         "location": {
             "type": "string",
-            "defaultValue": "westus",
+            "defaultValue": "eastus",
             "metadata": {
                 "description": "Location for the storage account."
             }
@@ -14,6 +14,9 @@
             "metadata": {
                 "description": "Name of the storage account."
             }
+        },
+        "containerName": {
+            "type": "string"
         },
         "skuName": {
             "type": "string",
@@ -50,6 +53,15 @@
                 "name": "[parameters('skuName')]"
             },
             "kind": "[parameters('kind')]",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(parameters('storageAccountName'),'/default/', parameters('containerName'))]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+            ],
             "properties": {}
         }
     ]

@@ -1,0 +1,3 @@
+// az deployment group create --resource-group myResourceGroup --template-file template.json --parameters parameters.json
+
+az deployment group create --resource-group RG-talhawatto-training --template-file azuredeploy.json --parameters azuredeploy.parameters.json
