@@ -60,7 +60,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2019-04-01",
             "name": "[parameters('storageAccountName')]",
-            "location": "[parameters('location')]",
+            "location": "[resourceGroup().location]",
             "sku": {
                 "name": "[parameters('skuName')]"
             },
@@ -96,6 +96,15 @@
             ],
             "properties": {
                 "messageRetentionInDays": 7
+                // "captureDescription": {
+                //     "enabled": true,
+                //     "encoding": "Avro",
+                //     "intervalInSeconds": 600,
+                //     "destination": {
+                //         "name": "[concat(parameters('containerName'), '/eventhub/', parameters('eventHubName'))]",
+                //         "storageAccountResourceId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+                //     }
+                // }
             }
         }
     ]
