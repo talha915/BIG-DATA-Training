@@ -2,7 +2,8 @@
 FROM python:3.8.5
 
 # Set working directory
-WORKDIR /
+WORKDIR /FastAPI
+COPY . /FastAPI/
 
 # Copy requirements.txt
 COPY requirements.txt .
@@ -17,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the FastAPI application
-CMD ["uvicorn", "index:app", "--host", "localhost", "--port", "5050"]
+CMD ["uvicorn", "index:app", "--host", "0.0.0.0", "--port", "8000"]
