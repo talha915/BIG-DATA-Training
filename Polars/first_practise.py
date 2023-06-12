@@ -12,15 +12,15 @@ df = pl.DataFrame(
 print(df)
 
 
-def filter_rows(df):
+def filter_rows(df, column_name, threshold):
     """
-    Input: Dataframe
+    Input: Dataframe, column_name, threshold
     Action: Filter the DataFrame to include only rows where the value in column "A" is greater than 2.
     Output: Filtered rows
     """
-    filtered_rows = df.filter(pl.col("A") > 2)
+    filtered_rows = df.filter(pl.col(column_name) > threshold)
     return filtered_rows
 
-filtered_rows = filter_rows(df)
+filtered_rows = filter_rows(df, "A", 2)
 
 print(filtered_rows)
