@@ -24,3 +24,13 @@ def filter_rows(df, column_name, threshold):
 filtered_rows = filter_rows(df, "A", 2)
 
 print(filtered_rows)
+
+grouped_rows = df.groupby(pl.col("fruits")).agg(pl.mean("B"))
+print(grouped_rows)
+
+def aggregate_rows(df, column_name, threshold):
+    """
+    Input: Dataframe, column_name, threshold
+    Action: Group the DataFrame by the "fruits" column and calculate the average value of column "B" for each fruit.
+    Output: Filtered rows
+    """
