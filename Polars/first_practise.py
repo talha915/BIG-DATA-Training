@@ -84,7 +84,18 @@ print(df_joined)
 def multiply_by_two(value):
     return value * 2
 
-# Apply the custom function to column "A" and create a new column "C" with the results
-df_updated = df.with_columns(pl.col("A").apply(multiply_by_two, return_dtype=pl.Int64).alias("C"))
+def add_new_col(df, column_name, alias_name):
+    """
+    Input: Dataframe, column_name, alias_name
+    Action: Apply the custom function to column "A" and create a new column "C" with the results
+    Output: added column
+    """
+    try:
+        df_updated = df.with_columns(pl.col(column_name).apply(multiply_by_two, return_dtype=pl.Int64).alias(alias_name))
+        return df_updated
+    except Exception as e:
+        return e 
 
-print(df_updated)
+df_new_col = add_new_col(df, "A", "C")
+
+print(df_new_col)
