@@ -8,7 +8,6 @@ df = pl.DataFrame(
         "cars": ["beetle", "audi", "beetle", "beetle", "beetle"],
     }
 )
-
 print(df)
 
 
@@ -22,10 +21,7 @@ def filter_rows(df, column_name, threshold):
     return filtered_rows
 
 filtered_rows = filter_rows(df, "A", 2)
-
 print(filtered_rows)
-
-
 
 
 def aggregate_rows(df, grouped_col, action_col):
@@ -41,5 +37,22 @@ aggregrated_rows = aggregate_rows(df, "fruits", "B")
 print("Aggregated Rows: ", aggregrated_rows)
 
 
-sorted_df = df.sort(by="A", descending=True)
-print(sorted_df)
+def sort_rows(df, column_name, action):
+    """
+    Input: Dataframe, column_name, "descending True or False: Boolean"
+    Action: Sort the DataFrame in descending order based on the values in column "A"
+    Output: Aggregated rows
+    """
+    try:
+        sorted_df = df.sort(by=column_name, descending=action)
+        return sorted_df
+    except Exception as e:
+        return e 
+
+sorted_rows = sort_rows(df, "A", True)
+print(sorted_rows)       
+
+
+# Join DataFrames: Create a second DataFrame and join it with the original DataFrame based on a common column.
+# Apply a function: Apply a custom function to a column and create a new column with the results.
+
