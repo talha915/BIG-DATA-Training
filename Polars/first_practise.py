@@ -79,3 +79,11 @@ def joined_rows(df, df2, column_name):
 
 df_joined = joined_rows(df, df2, "A")
 print(df_joined)
+
+
+def multiply_by_two(value):
+    return value * 2
+
+# Apply the custom function to column "A" and create a new column "C" with the results
+df = df.with_column(pl.col("A").apply(multiply_by_two, return_dtype=pl.Int64).alias("C"))
+print(df_updated)
