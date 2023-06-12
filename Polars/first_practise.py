@@ -41,5 +41,5 @@ aggregrated_rows = aggregate_rows(df, "fruits", "B")
 print("Aggregated Rows: ", aggregrated_rows)
 
 
-sorted_df = df.select("*").sort("A", descending=True)
+sorted_df = df.sort(by="A", descending=True)
 print(sorted_df)
