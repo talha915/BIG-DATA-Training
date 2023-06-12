@@ -85,5 +85,6 @@ def multiply_by_two(value):
     return value * 2
 
 # Apply the custom function to column "A" and create a new column "C" with the results
-df = df.with_column(pl.col("A").apply(multiply_by_two, return_dtype=pl.Int64).alias("C"))
+df_updated = df.with_columns(pl.col("A").apply(multiply_by_two, return_dtype=pl.Int64).alias("C"))
+
 print(df_updated)
