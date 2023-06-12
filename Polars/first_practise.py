@@ -8,6 +8,14 @@ df = pl.DataFrame(
         "cars": ["beetle", "audi", "beetle", "beetle", "beetle"],
     }
 )
+
+df2 = pl.DataFrame(
+    {
+        "A": [1, 2, 3],
+        "fruits": ["banana", "apple", "mango"]
+    }
+)
+
 print(df)
 
 
@@ -56,3 +64,18 @@ print(sorted_rows)
 # Join DataFrames: Create a second DataFrame and join it with the original DataFrame based on a common column.
 # Apply a function: Apply a custom function to a column and create a new column with the results.
 
+
+def joined_rows(df, df2, column_name):
+    """
+    Input: Dataframe, Dataframe, column name
+    Action: Create a second DataFrame and join it with the original DataFrame based on a common column.
+    Output: joined rows
+    """
+    try:
+        df_join = df.join(df2, on="A")
+        return df_join
+    except Exception as e:
+        return e 
+
+df_joined = joined_rows(df, df2, "A")
+print(df_joined)
