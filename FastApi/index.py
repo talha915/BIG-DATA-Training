@@ -25,3 +25,7 @@ async def dummy_res():
             'name': 'DEF'
         }
     ]
+    return {
+        "res": data,
+        "status_code": 200
+    }
