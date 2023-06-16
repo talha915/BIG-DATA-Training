@@ -15,17 +15,23 @@ async def get_covid_results():
 
 @app.get('/dummy-result')
 async def dummy_res():
-    data = [
-        {
-            'id': 1,
-            'name': 'ABC'
-        },
-        {
-            'id': 2,
-            'name': 'DEF'
+    try:
+        data = [
+            {
+                'id': 1,
+                'name': 'ABC'
+            },
+            {
+                'id': 2,
+                'name': 'DEF'
+            }
+        ]
+        return {
+            "res": data,
+            "status_code": 200
         }
-    ]
-    return {
-        "res": data,
-        "status_code": 200
-    }
+    except Exception as e:
+        return {
+            "error": e,
+            "status_code": 500
+        }    
