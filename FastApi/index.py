@@ -13,3 +13,15 @@ async def get_covid_results():
     covid_report = await get_covid_data()
     return covid_report    
 
+@app.get('/dummy-result')
+async def dummy_res():
+    data = [
+        {
+            'id': 1,
+            'name': 'ABC'
+        },
+        {
+            'id': 2,
+            'name': 'DEF'
+        }
+    ]
