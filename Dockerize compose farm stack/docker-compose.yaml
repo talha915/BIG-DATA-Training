@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: test_react
+    build:
+      context: ./test
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+  backend:
+    container_name: test_fastapi
+    build:
+      context: ./FastApi
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
