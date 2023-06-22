@@ -10,6 +10,27 @@ Welcome to test-sphinx's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Getting Started
+---------------
+
+This is the introduction to my project.
+
+Usage
+-----
+
+Here's an example of using my project's Python code:
+
+.. code-block:: python
+
+   def greet(name):
+       """
+       Greet a person by name.
+       """
+       print(f"Hello, {name}!")
+
+   greet("Alice")
+
+
 
 
 Indices and tables
