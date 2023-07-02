@@ -33,9 +33,3 @@ Here's an example of using my project's Python code:
 
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
