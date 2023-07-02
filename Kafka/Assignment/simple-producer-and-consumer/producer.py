@@ -11,7 +11,8 @@ producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 messages = [
     b'Ho 1',
     b'Hi 2',
-    b'HoHI 3'
+    b'HoHI 3',
+    b'Oye'
 ]
 
 for message in messages:
