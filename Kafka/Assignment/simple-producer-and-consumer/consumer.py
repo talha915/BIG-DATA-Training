@@ -2,7 +2,7 @@ from kafka import KafkaConsumer
 
 # Kafka broker details
 bootstrap_servers = 'localhost:9092'
-topic = 'test_topic_1'
+topic = 'test_topic'
 
 # Create a Kafka consumer
 consumer = KafkaConsumer(

@@ -1,18 +1,18 @@
 from kafka import KafkaProducer
 
-#Brocker details
-
+# Kafka broker details
 bootstrap_servers = 'localhost:9092'
-topic = 'test_topic_1'
+topic = 'test_topic'
 
+# Create a Kafka producer
 producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 
+# Produce messages
 messages = [
     b'Ho 1',
     b'Hi 2',
     b'HoHI 3'
 ]
-
 
 for message in messages:
     print(topic, message)
