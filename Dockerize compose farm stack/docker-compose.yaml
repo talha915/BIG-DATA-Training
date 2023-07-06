@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3000:3000
+    image: frontend-image:1.0  
   backend:
     container_name: test_fastapi
     build:
@@ -14,3 +15,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8000:8000
+    image: backend-image:1.0  
