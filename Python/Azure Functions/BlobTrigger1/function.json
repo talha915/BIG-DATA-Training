@@ -6,7 +6,7 @@
       "type": "blobTrigger",
       "direction": "in",
       "path": "myblob/{name}",
-      "connection": "talhawattostore01_STORAGE"
+      "connection": "talhawattostore01"
     }
   ]
 }
