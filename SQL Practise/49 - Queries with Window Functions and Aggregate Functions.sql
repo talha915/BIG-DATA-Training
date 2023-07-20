@@ -7,3 +7,7 @@ from classicmodels.orderdetails;
 -- WIndow function sum
 select *, sum(priceEach) over(order by orderNumber) as total_sum
 from classicmodels.orderdetails;
+
+-- Dense Rank
+select *, dense_rank() over(order by priceEach) as ranking
+from classicmodels.orderdetails;
