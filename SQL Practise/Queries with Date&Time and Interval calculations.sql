@@ -13,3 +13,6 @@ SELECT DATE_ADD('2023-07-20', INTERVAL 7 DAY) as date_after_7_days;
 
 -- Date Subtraction
 select date_sub('2023-07-20', INTERVAL 12 DAY) AS DATE_BEFORE_12_DAYS; 
+
+-- Date format
+select date_format('2023-06-09', '%Y/%m/%d') as full_date;
