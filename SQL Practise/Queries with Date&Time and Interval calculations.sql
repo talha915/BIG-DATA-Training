@@ -16,3 +16,8 @@ select date_sub('2023-07-20', INTERVAL 12 DAY) AS DATE_BEFORE_12_DAYS;
 
 -- Date format
 select date_format('2023-06-09', '%Y/%m/%d') as full_date;
+
+-- Date Extraction
+select year('2023-07-20') as year_no;
+select month('2023-07-20') as month_no;
+select day('2023-07-20') as day_no;
