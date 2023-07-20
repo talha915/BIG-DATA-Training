@@ -29,3 +29,7 @@ select * from payments ;
 
 select * from payments where
 paymentDate Between '2004-12-31' AND '2005-02-20';
+
+
+select * from payments where
+year(paymentDate) between '2005' and '2006';
