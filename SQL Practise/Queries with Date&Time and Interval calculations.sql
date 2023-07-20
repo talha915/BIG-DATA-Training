@@ -21,3 +21,11 @@ select date_format('2023-06-09', '%Y/%m/%d') as full_date;
 select year('2023-07-20') as year_no;
 select month('2023-07-20') as month_no;
 select day('2023-07-20') as day_no;
+
+use classicmodels;
+
+
+select * from payments ;
+
+select * from payments where
+paymentDate Between '2004-12-31' AND '2005-02-20';
