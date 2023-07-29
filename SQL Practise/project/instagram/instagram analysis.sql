@@ -26,3 +26,9 @@ order by total_likes desc;
 select * from photo_tags limit 20;
 
 select * from tags limit 20;
+
+select tags.tag_name, count(photo_tags.tag_id) as count_of_tags, tags.created_at 
+from tags inner join photo_tags 
+on tags.id = photo_tags.tag_id
+group by tags.tag_name
+order by count_of_tags desc; 
