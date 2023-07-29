@@ -4,4 +4,6 @@ show tables;
 
 describe users;
 
-select * from users order by created_at asc limit 50;
+-- Find 5 oldest users of instagram from database provided
+
+select * from users order by created_at limit 5; 
