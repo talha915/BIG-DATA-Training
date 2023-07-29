@@ -20,3 +20,9 @@ inner join photos on likes.photo_id = photos.id
 inner join users on photos.user_id = users.id
 group by likes.photo_id, users.username 
 order by total_likes desc;
+
+-- 4) Identify and suggest the top 5 most commonly used hashtags on the platform 
+
+select * from photo_tags limit 20;
+
+select * from tags limit 20;
