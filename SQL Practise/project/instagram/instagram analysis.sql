@@ -36,3 +36,6 @@ group by day_of_week
 order by registered_user desc, day_of_week asc; 
 
 
+-- 6) Provide how many times does average user post on instagram. Also, provide the total number of
+-- photos on instagram / total number of rows 
+
