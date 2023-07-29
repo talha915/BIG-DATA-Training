@@ -30,3 +30,9 @@ order by count_of_tags desc limit 5;
 
 
 -- 5) What day of week do most users register on? Provide when to schedule an ad campaign
+select date_format(created_at, "%W") as day_of_week, count(username) as registered_user
+from users
+group by day_of_week
+order by registered_user desc, day_of_week asc; 
+
+
