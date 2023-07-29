@@ -26,4 +26,7 @@ select tags.tag_name, count(photo_tags.tag_id) as count_of_tags, tags.created_at
 from tags inner join photo_tags 
 on tags.id = photo_tags.tag_id
 group by tags.tag_name
-order by count_of_tags desc; 
+order by count_of_tags desc limit 5; 
+
+
+-- 5) What day of week do most users register on? Provide when to schedule an ad campaign
