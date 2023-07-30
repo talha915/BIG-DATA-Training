@@ -38,9 +38,6 @@ order by registered_user desc, day_of_week asc;
 
 -- 6) Provide how many times does average user post on instagram. Also, provide the total number of
 -- photos on instagram / total number of users 
-select * from photos;
-select * from users;
-
 with posted_users as(
 	select users.id as user_id, users.username, count(photos.id) as registered_posts
     from users left join photos
