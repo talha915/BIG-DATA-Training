@@ -42,10 +42,11 @@ select * from photos;
 select * from users;
 
 with posted_users as(
-	select users.id, users.username, count(photos.id) as registered_posts
-    from users inner join photos
+	select users.id as user_id, users.username, count(photos.id) as registered_posts
+    from users left join photos
     on users.id = photos.user_id
     group by users.id
     order by registered_posts desc
 )
-select * from posted_users;
+select sum(registered_posts) as total_photos, count(user_id) total_users, 
+sum(registered_posts)/count(user_id) as per_user from posted_users;
