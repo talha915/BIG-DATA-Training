@@ -47,3 +47,19 @@ with posted_users as(
 )
 select sum(registered_posts) as total_photos, count(user_id) total_users, 
 sum(registered_posts)/count(user_id) as per_user from posted_users;
+
+
+-- 7) Find users who liked every single posted post since normal user cant do that
+
+select * from likes limit 20; 
+select * from users limit 20;
+select * from photos;
+
+with liked_user as (
+	select likes.user_id, count(likes.user_id) as liked_by_user, users.username 
+	from likes left join users
+	on likes.user_id = users.id
+	group by users.id 
+	order by liked_by_user
+)
+select * from liked_user where liked_by_user = (select count(*) from photos);
