@@ -26,6 +26,18 @@ create table orders(
 
 Alter table orders add constraint fk_customer_id foreign key (CustomerID) references customers(CustomerID);
 
+insert into orders 
+(OrderID, CustomerID, OrderDate, OrderAmount)
+values
+(101,1,'2023-07-15',200)
+,(102,1,'2023-07-18',300)
+,(103,2,'2023-07-20',150)
+,(104,3,'2023-07-22',1000)
+,(105,1,'2023-07-25',250)
+,(106,4,'2023-07-28',500)
+,(107,3,'2023-07-30',800)
+,(108,5,'2023-08-01',1200);
 
+-- Question 1: Find the total order amount for each customer along with their names. 
 
-
+select * from orders;
