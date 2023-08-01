@@ -16,3 +16,16 @@ values
 (3,'Bob','UK'),
 (4,'Eve','Australia'),
 (5,'Carl','Germany');
+
+create table orders(
+	OrderID int not null primary key,	
+	CustomerID int,
+	OrderDate date,
+	OrderAmount int not null
+); 
+
+Alter table orders add constraint fk_customer_id foreign key (CustomerID) references customers(CustomerID);
+
+
+
+
