@@ -52,3 +52,12 @@ inner join
 orders
 on orders.CustomerID = customers.CustomerID
 group by customers.CustomerID, customers.CustomerName, customers.Country;
+
+
+-- Question 3: Find the number of orders placed by each customer along with their names. 
+select customers.CustomerID, customers.CustomerName, customers.Country, count(orders.OrderAmount) as num_of_orders from customers
+inner join 
+orders
+on orders.CustomerID = customers.CustomerID
+group by customers.CustomerID, customers.CustomerName, customers.Country
+order by num_of_orders desc;
