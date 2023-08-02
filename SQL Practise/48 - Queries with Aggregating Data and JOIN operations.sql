@@ -61,3 +61,9 @@ orders
 on orders.CustomerID = customers.CustomerID
 group by customers.CustomerID, customers.CustomerName, customers.Country
 order by num_of_orders desc;
+
+-- Question 4: Retrieve customer information along with their order details.
+select customers.CustomerID, customers.CustomerName, customers.Country, orders.OrderAmount from customers
+inner join 
+orders
+on customers.CustomerID = orders.CustomerID;
