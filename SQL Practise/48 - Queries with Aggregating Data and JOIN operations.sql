@@ -67,3 +67,11 @@ select customers.CustomerID, customers.CustomerName, customers.Country, orders.O
 inner join 
 orders
 on customers.CustomerID = orders.CustomerID;
+
+-- Question 5: Find customers who have placed orders with a total amount greater than 1000.
+select customers.CustomerID, customers.CustomerName, customers.Country, sum(OrderAmount) as total_amount from customers
+inner join
+orders
+on customers.CustomerID = orders.CustomerID
+group by customers.CustomerID, customers.CustomerName, customers.Country
+having sum(OrderAmount) > 1000
