@@ -74,4 +74,4 @@ inner join
 orders
 on customers.CustomerID = orders.CustomerID
 group by customers.CustomerID, customers.CustomerName, customers.Country
-where sum(OrderAmount) > 1000;
+having sum(OrderAmount) > 1000;
