@@ -47,3 +47,8 @@ on orders.CustomerID = customers.CustomerID
 group by customers.CustomerID, customers.CustomerName, customers.Country;
 
 -- Question 2: Find the maximum order amount for each customer along with their names. 
+select customers.CustomerID, customers.CustomerName, customers.Country, max(orders.OrderAmount) as max_order_amount from customers
+inner join 
+orders
+on orders.CustomerID = customers.CustomerID
+group by customers.CustomerID, customers.CustomerName, customers.Country;
