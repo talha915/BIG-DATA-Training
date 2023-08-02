@@ -46,3 +46,4 @@ orders
 on orders.CustomerID = customers.CustomerID
 group by customers.CustomerID, customers.CustomerName, customers.Country;
 
+-- Question 2: Find the maximum order amount for each customer along with their names. 
