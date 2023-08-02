@@ -40,4 +40,9 @@ values
 
 -- Question 1: Find the total order amount for each customer along with their names. 
 
-select * from orders;
+select customers.CustomerID, customers.CustomerName, customers.Country, sum(orders.OrderAmount) as total_amount from customers 
+inner join 
+orders 
+on orders.CustomerID = customers.CustomerID
+group by customers.CustomerID, customers.CustomerName, customers.Country;
+
