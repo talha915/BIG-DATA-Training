@@ -26,11 +26,7 @@ inner join
 inner join 
 	orderdetails on orders.orderNumber = orderdetails.orderNumber;
     
-    
-
-
-
-
+-- 					Trying with window functions									-- 
 SELECT 
   customers.customerName,
   customers.customerNumber,
