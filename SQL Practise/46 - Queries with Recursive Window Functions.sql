@@ -15,7 +15,7 @@ SELECT * FROM numbers;
 
 
 
-WITH RECURSIVE table_of_2 AS(
+WITH RECURSIVE table_of_2 AS (
 	SELECT 1 AS counter, 2 AS base_number
     UNION ALL
     SELECT counter + 1, base_number from table_of_2 where counter < 10
