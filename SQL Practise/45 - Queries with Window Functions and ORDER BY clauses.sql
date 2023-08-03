@@ -12,6 +12,23 @@ inner join orderdetails
 on orders.orderNumber = orderdetails.orderNumber
 group by customers.customerName, customers.customerNumber, orders.orderNumber, orders.status;
 
+-- 					Trying with window functions									-- 
+SELECT
+	customers.customerName, 
+    customers.customerNumber, 
+    orders.orderNumber, 
+    orders.status,
+	sum(orderdetails.priceEach) OVER (PARTITION BY customers.customerName, customers.customerNumber, orders.orderNumber, orders.status) as cumulative_prices
+from 
+	customers 
+inner join 
+	orders on customers.customerNumber = orders.customerNumber
+inner join 
+	orderdetails on orders.orderNumber = orderdetails.orderNumber;
+    
+    
+
+
 
 
 SELECT 
