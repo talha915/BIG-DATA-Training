@@ -20,4 +20,8 @@ WITH RECURSIVE table_of_2 AS (
     UNION ALL
     SELECT counter + 1, base_number from table_of_2 where counter < 10
 )
-SELECT base_number, counter, base_number*counter as multiple from table_of_2;
+SELECT base_number, counter, base_number*counter as multiple, 
+SUM(base_number*counter) OVER (ORDER BY counter) as cumulative_sum
+FROM table_of_2;
+
+
