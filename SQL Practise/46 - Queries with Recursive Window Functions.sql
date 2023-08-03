@@ -6,8 +6,8 @@ WITH RECURSIVE numbers AS (
 
 SELECT * FROM numbers;
 
-WITH RECURSIVE numbers AS(
-	SELECT 2 AS recursive_number
+WITH RECURSIVE numbers AS (
+    SELECT 2 AS recursive_number
     UNION ALL
     SELECT recursive_number * 2 FROM numbers WHERE recursive_number <= 10
 )
