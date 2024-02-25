@@ -1,15 +1,13 @@
+# templates/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "test-fastapi-chart.fullname" . }}
+  name: {{ include "my-fastapi-chart.fullname" . }}
   labels:
-    {{- include "test-fastapi-chart.labels" . | nindent 4 }}
+    app: {{ include "my-fastapi-chart.name" . }}
 spec:
-  type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+      targetPort: {{ .Values.service.port }}
   selector:
-    {{- include "test-fastapi-chart.selectorLabels" . | nindent 4 }}
+    app: {{ include "my-fastapi-chart.name" . }}
