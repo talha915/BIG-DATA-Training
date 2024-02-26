@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "my-fastapi-chart.fullname" . }}
+  name: {{ include "test-fastapi-chart.fullname" . }}
   labels:
-    app: {{ include "my-fastapi-chart.name" . }}
+    app: {{ include "test-fastapi-chart.name" . }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ include "my-fastapi-chart.name" . }}
+      app: {{ include "test-fastapi-chart.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "my-fastapi-chart.name" . }}
+        app: {{ include "test-fastapi-chart.name" . }}
     spec:
       containers:
       - name: my-fastapi-container
