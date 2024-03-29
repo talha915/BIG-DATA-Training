@@ -1,0 +1,77 @@
+{
+    "data": [
+      {
+        "user_info": {
+          "Daily Time Spent on Site": 68.95,
+          "Age": 35,
+          "Area Income": 61833.9,
+          "Daily Internet Usage": 256.09,
+          "Ad Topic Line": "Cloned 5thgeneration orchestration",
+          "Clicked on Ad": 0
+        },
+        "location_info": {
+          "City": "Wrightburgh",
+          "Country": "Tunisia"
+        },
+        "additional_info": {
+          "Gender": "Male",
+          "Timestamp": "2016-03-27 00:53:11"
+        }
+      },
+      {
+        "user_info": {
+          "Daily Time Spent on Site": 80.23,
+          "Age": 31,
+          "Area Income": 68441.85,
+          "Daily Internet Usage": 193.77,
+          "Ad Topic Line": "Monitored national standardization",
+          "Clicked on Ad": 0
+        },
+        "location_info": {
+          "City": "West Jodi",
+          "Country": "Nauru"
+        },
+        "additional_info": {
+          "Gender": "Female",
+          "Timestamp": "2016-04-04 01:39:02"
+        }
+      },
+      {
+        "user_info": {
+          "Daily Time Spent on Site": 69.47,
+          "Age": 26,
+          "Area Income": 59785.94,
+          "Daily Internet Usage": 236.5,
+          "Ad Topic Line": "Organic bottom-line service-desk",
+          "Clicked on Ad": 0
+        },
+        "location_info": {
+          "City": "Davidton",
+          "Country": "San Marino"
+        },
+        "additional_info": {
+          "Gender": "Male",
+          "Timestamp": "2016-03-13 20:35:42"
+        }
+      },
+      {
+        "user_info": {
+          "Daily Time Spent on Site": 74.15,
+          "Age": 29,
+          "Area Income": 54806.18,
+          "Daily Internet Usage": 245.89,
+          "Ad Topic Line": "Triple-buffered reciprocal time-frame",
+          "Clicked on Ad": 0
+        },
+        "location_info": {
+          "City": "West Terrifurt",
+          "Country": "Italy"
+        },
+        "additional_info": {
+          "Gender": "Female",
+          "Timestamp": "2016-01-10 02:31:19"
+        }
+      }
+    ]
+  }
+  
