@@ -1,0 +1,8 @@
+{
+    "name": "Python PySpark Development",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "workspaceFolder": "/app",
+    "postCreateCommand": "code --install-extension ms-python.python",
+    "remoteUser": "vscode"
+}
