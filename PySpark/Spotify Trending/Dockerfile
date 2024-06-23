@@ -7,8 +7,7 @@ ENV HADOOP_VERSION=3.2
 
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    openjdk-17-jdk-headless \
+    apt-get install -y openjdk-11-jre-headless && \
     wget \
     ca-certificates \
     gnupg && \
