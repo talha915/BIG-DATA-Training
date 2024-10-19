@@ -7,7 +7,7 @@ URL = "https://www.amazon.com/s?k=samsung+galaxy+s24"
 
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
+    "User-Agent": "",
     "Accept-Language": "en-US, en;q=0.5",
 }
 
